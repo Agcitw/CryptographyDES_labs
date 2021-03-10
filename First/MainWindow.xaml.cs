@@ -61,13 +61,27 @@ namespace First
 
         private static int Permute(int number, IEnumerable<int> permutations)
         {
-            //TODO: without converts
-            var charsOfNumber = 
-                number.ToString().Select(c => Convert.ToInt32(char.GetNumericValue(c))).ToArray();
+            var digitsOfNumber = new List<int>();
+            
+            while (true)
+            {
+                var remainder = number % 10;
+                digitsOfNumber.Add(remainder);
+                if (remainder == number) break;
+                number /= 10;
+            }
+
+            digitsOfNumber.Reverse();
             var permutationsArray = permutations.ToArray();
-            var resultStr = permutationsArray.
-                Aggregate<int, string>(default, (current, index) => current + charsOfNumber[index]);
-            return Convert.ToInt32(resultStr);
+            var result = 0;
+
+            foreach (var index in permutationsArray)
+            {
+                result += digitsOfNumber[index];
+                result *= 10;
+            }
+            
+            return result / 10;
         }
 
         private void ExceptionOnInput(string message)
