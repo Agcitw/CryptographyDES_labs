@@ -1,0 +1,15 @@
+C:\Users\anton\RiderProjects\Krypto1\First\bin\Debug\First.exe.config
+C:\Users\anton\RiderProjects\Krypto1\First\bin\Debug\First.exe
+C:\Users\anton\RiderProjects\Krypto1\First\bin\Debug\First.pdb
+C:\Users\anton\RiderProjects\Krypto1\First\obj\Debug\First.csprojAssemblyReference.cache
+C:\Users\anton\RiderProjects\Krypto1\First\obj\Debug\MainWindow.g.cs
+C:\Users\anton\RiderProjects\Krypto1\First\obj\Debug\App.g.cs
+C:\Users\anton\RiderProjects\Krypto1\First\obj\Debug\First_MarkupCompile.cache
+C:\Users\anton\RiderProjects\Krypto1\First\obj\Debug\First_MarkupCompile.lref
+C:\Users\anton\RiderProjects\Krypto1\First\obj\Debug\MainWindow.baml
+C:\Users\anton\RiderProjects\Krypto1\First\obj\Debug\First.g.resources
+C:\Users\anton\RiderProjects\Krypto1\First\obj\Debug\First.Properties.Resources.resources
+C:\Users\anton\RiderProjects\Krypto1\First\obj\Debug\First.csproj.GenerateResource.cache
+C:\Users\anton\RiderProjects\Krypto1\First\obj\Debug\First.csproj.CoreCompileInputs.cache
+C:\Users\anton\RiderProjects\Krypto1\First\obj\Debug\First.exe
+C:\Users\anton\RiderProjects\Krypto1\First\obj\Debug\First.pdb
