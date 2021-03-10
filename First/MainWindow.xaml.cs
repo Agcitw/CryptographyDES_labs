@@ -16,7 +16,7 @@ namespace First
         {
             int number;
             IEnumerable<int> permutations;
-
+            
             try
             {
                 if (TextBox1.Text.Length == 0 || TextBox2.Text.Trim().Length == 0)
@@ -24,7 +24,14 @@ namespace First
                 if (TextBox2.Text.Any(char.IsLetter))
                     throw new ArgumentException();
                 number = Convert.ToInt32(TextBox1.Text);
-                permutations = TextBox2.Text.Trim().Split(' ').Select(s => Convert.ToInt32(s));
+                permutations = TextBox2.Text.Trim().Split(' ').
+                    Select(s => Convert.ToInt32(s)).ToArray();
+
+                var lengthOfNum =
+                    number.ToString().Select(c => Convert.ToInt32(char.GetNumericValue(c))).ToArray().Length;
+                
+                if (permutations.Any(index => index >= lengthOfNum || index < 0))
+                    throw new ArgumentOutOfRangeException();
             }
             catch (FormatException)
             {
@@ -47,30 +54,19 @@ namespace First
                 return;
             }
             
-            try
-            {
-                TextBox3.Text = Permute(number, permutations).ToString();
-                TextBox1.Clear(); 
-                TextBox2.Clear();
-            }
-            catch (ArgumentOutOfRangeException)
-            {
-                ExceptionOnInput("Out of range index");
-            }
+            TextBox3.Text = Permute(number, permutations).ToString();
+            TextBox1.Clear(); 
+            TextBox2.Clear();
         }
 
         private static int Permute(int number, IEnumerable<int> permutations)
         {
+            //TODO: without converts
             var charsOfNumber = 
                 number.ToString().Select(c => Convert.ToInt32(char.GetNumericValue(c))).ToArray();
             var permutationsArray = permutations.ToArray();
-
-            if (permutationsArray.Any(index => index >= charsOfNumber.Length || index < 0))
-                throw new ArgumentOutOfRangeException();
-            
             var resultStr = permutationsArray.
                 Aggregate<int, string>(default, (current, index) => current + charsOfNumber[index]);
-            
             return Convert.ToInt32(resultStr);
         }
 
