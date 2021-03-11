@@ -14,8 +14,8 @@ namespace First
 
         private void Button1_OnClick(object sender, RoutedEventArgs e)
         {
-            int number;
-            IEnumerable<int> permutations;
+            uint number;
+            IEnumerable<byte> permutations;
             
             try
             {
@@ -23,15 +23,9 @@ namespace First
                     throw new ArgumentNullException();
                 if (TextBox2.Text.Any(char.IsLetter))
                     throw new ArgumentException();
-                number = Convert.ToInt32(TextBox1.Text);
+                number = Convert.ToUInt32(TextBox1.Text);
                 permutations = TextBox2.Text.Trim().Split(' ').
-                    Select(s => Convert.ToInt32(s)).ToArray();
-
-                var lengthOfNum =
-                    number.ToString().Select(c => Convert.ToInt32(char.GetNumericValue(c))).ToArray().Length;
-                
-                if (permutations.Any(index => index >= lengthOfNum || index < 0))
-                    throw new ArgumentOutOfRangeException();
+                    Select(s => Convert.ToByte(s)).ToArray();
             }
             catch (FormatException)
             {
@@ -59,29 +53,19 @@ namespace First
             TextBox2.Clear();
         }
 
-        private static int Permute(int number, IEnumerable<int> permutations)
+        private static uint Permute(uint value, IEnumerable<byte> colPerm)
         {
-            var digitsOfNumber = new List<int>();
-            
-            while (true)
+            uint result = 0;
+            var permRule = colPerm.ToArray();
+
+            for (var i = 0; i < permRule.Length; i++)
             {
-                var remainder = number % 10;
-                digitsOfNumber.Add(remainder);
-                if (remainder == number) break;
-                number /= 10;
+                var currentIndex = permRule.Length - i - 1;
+                result <<= 1;
+                result |= (value >> (permRule[currentIndex] - 1)) & 1;
             }
 
-            digitsOfNumber.Reverse();
-            var permutationsArray = permutations.ToArray();
-            var result = 0;
-
-            foreach (var index in permutationsArray)
-            {
-                result += digitsOfNumber[index];
-                result *= 10;
-            }
-            
-            return result / 10;
+            return result;
         }
 
         private void ExceptionOnInput(string message)
