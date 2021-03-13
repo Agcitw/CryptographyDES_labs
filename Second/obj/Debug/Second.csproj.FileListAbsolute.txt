@@ -1,0 +1,15 @@
+C:\Users\anton\RiderProjects\Krypto1\Second\bin\Debug\Second.exe.config
+C:\Users\anton\RiderProjects\Krypto1\Second\bin\Debug\Second.exe
+C:\Users\anton\RiderProjects\Krypto1\Second\bin\Debug\Second.pdb
+C:\Users\anton\RiderProjects\Krypto1\Second\obj\Debug\Second.csprojAssemblyReference.cache
+C:\Users\anton\RiderProjects\Krypto1\Second\obj\Debug\MainWindow.g.cs
+C:\Users\anton\RiderProjects\Krypto1\Second\obj\Debug\App.g.cs
+C:\Users\anton\RiderProjects\Krypto1\Second\obj\Debug\Second_MarkupCompile.cache
+C:\Users\anton\RiderProjects\Krypto1\Second\obj\Debug\Second_MarkupCompile.lref
+C:\Users\anton\RiderProjects\Krypto1\Second\obj\Debug\MainWindow.baml
+C:\Users\anton\RiderProjects\Krypto1\Second\obj\Debug\Second.g.resources
+C:\Users\anton\RiderProjects\Krypto1\Second\obj\Debug\Second.Properties.Resources.resources
+C:\Users\anton\RiderProjects\Krypto1\Second\obj\Debug\Second.csproj.GenerateResource.cache
+C:\Users\anton\RiderProjects\Krypto1\Second\obj\Debug\Second.csproj.CoreCompileInputs.cache
+C:\Users\anton\RiderProjects\Krypto1\Second\obj\Debug\Second.exe
+C:\Users\anton\RiderProjects\Krypto1\Second\obj\Debug\Second.pdb
