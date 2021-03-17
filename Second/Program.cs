@@ -15,7 +15,7 @@ namespace Second
 
 		public static void Main()
 		{
-			Console.WriteLine(Substitute(0, Sub));
+			Console.WriteLine(Substitute(120, Sub));
 		}
 		
 		private static uint Substitute(uint value, IReadOnlyList<int[]> sub)
