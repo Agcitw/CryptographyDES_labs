@@ -1,0 +1,6 @@
+C:\Users\anton\RiderProjects\Krypto1\Third\bin\Debug\Third.exe
+C:\Users\anton\RiderProjects\Krypto1\Third\bin\Debug\Third.pdb
+C:\Users\anton\RiderProjects\Krypto1\Third\obj\Debug\Third.csprojAssemblyReference.cache
+C:\Users\anton\RiderProjects\Krypto1\Third\obj\Debug\Third.csproj.CoreCompileInputs.cache
+C:\Users\anton\RiderProjects\Krypto1\Third\obj\Debug\Third.exe
+C:\Users\anton\RiderProjects\Krypto1\Third\obj\Debug\Third.pdb
