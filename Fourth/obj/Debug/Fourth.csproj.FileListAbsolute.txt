@@ -1,0 +1,6 @@
+C:\Users\anton\RiderProjects\Krypto1\Fourth\bin\Debug\Fourth.exe
+C:\Users\anton\RiderProjects\Krypto1\Fourth\bin\Debug\Fourth.pdb
+C:\Users\anton\RiderProjects\Krypto1\Fourth\obj\Debug\Fourth.csprojAssemblyReference.cache
+C:\Users\anton\RiderProjects\Krypto1\Fourth\obj\Debug\Fourth.csproj.CoreCompileInputs.cache
+C:\Users\anton\RiderProjects\Krypto1\Fourth\obj\Debug\Fourth.exe
+C:\Users\anton\RiderProjects\Krypto1\Fourth\obj\Debug\Fourth.pdb
