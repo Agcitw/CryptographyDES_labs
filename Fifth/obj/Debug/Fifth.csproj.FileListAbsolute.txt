@@ -1,0 +1,9 @@
+C:\Users\anton\RiderProjects\Krypto1\Fifth\obj\Debug\Fifth.csprojAssemblyReference.cache
+C:\Users\anton\RiderProjects\Krypto1\Fifth\obj\Debug\Fifth.csproj.CoreCompileInputs.cache
+C:\Users\anton\RiderProjects\Krypto1\Fifth\bin\Debug\Fifth.exe
+C:\Users\anton\RiderProjects\Krypto1\Fifth\bin\Debug\Fifth.pdb
+C:\Users\anton\RiderProjects\Krypto1\Fifth\obj\Debug\Fifth.exe
+C:\Users\anton\RiderProjects\Krypto1\Fifth\obj\Debug\Fifth.pdb
+C:\Users\anton\RiderProjects\Krypto1\Fifth\bin\Debug\Fourth.exe
+C:\Users\anton\RiderProjects\Krypto1\Fifth\bin\Debug\Fourth.pdb
+C:\Users\anton\RiderProjects\Krypto1\Fifth\obj\Debug\Fifth.csproj.CopyComplete

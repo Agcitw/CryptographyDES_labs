@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace Fourth
 {
@@ -14,71 +15,76 @@ namespace Fourth
 			test.Show();
 		}
 	}
-
-	internal abstract class FeistelNet
+	
+	public abstract class FeistelNet
 	{
-		public abstract int Left { get; set; }
-		public abstract int Right { get; set; }
-		public abstract int Rounds { get; set; }
-		public abstract Func<int, int, int> SecretFunc { get; set; }
-		public abstract void Encrypt();
-		public abstract void Decrypt();
-	}
+		protected abstract int Left { get; set; }
+		protected abstract int Right { get; set; }
+		protected abstract int Rounds { get; set; }
 
-	internal sealed class TestFeistelNet : FeistelNet
-	{
-		public override int Left { get; set; }
-		public override int Right { get; set; }
-		public override int Rounds { get; set; }
-		public override Func<int, int, int> SecretFunc { get; set; } 
-			= (i, j) => (i + j) % 256;
+		private readonly List<int> _keys = new List<int>();
 
-		public TestFeistelNet(int left, int right, int rounds)
+		private int GenerateKey(int val1, int val2)
 		{
-			Left = left;
-			Right = right;
-			Rounds = rounds;
+			var key = SecretFunc(val1, val2);
+			_keys.Add(key);
+			return key;
 		}
-
-		public override void Encrypt()
+		
+		private Func<int, int, int> SecretFunc { get; } 
+			= (i, j) => (i + j) % 256;
+		
+		public void Encrypt()
 		{
-			var round = 1;
+			var key = 1;
 			for (var i = 0; i < Rounds; i++)
 			{
 				if (i < Rounds - 1)
 				{
 					var temp = Left;
-					Left = Right ^ SecretFunc(Left, round);
+					Left = Right ^ GenerateKey(Left, key);
 					Right = temp;
 				}
 				else
 				{
-					Right ^= SecretFunc(Left, round);
+					Right ^= GenerateKey(Left, key);
 				}
-				round += 1;
+				key += 1;
 			}
 		}
-		public override void Decrypt()
+		public void Decrypt()
 		{
-			var round = Rounds;
 			for (var i = 0; i < Rounds; i++)
 			{
 				if (i < Rounds - 1)
 				{
 					var temp = Left;
-					Left = Right ^ SecretFunc(Left, round);
+					Left = Right ^ _keys[i];
 					Right = temp;
 				}
 				else
 				{
-					Right ^= SecretFunc(Left, round);
+					Right ^= _keys[i];
 				}
-				round -= 1;
 			}
 		}
 		public void Show()
 		{
 			Console.WriteLine(Left + " " + Right);
+		}
+	}
+
+	internal sealed class TestFeistelNet : FeistelNet
+	{
+		protected override int Left { get; set; }
+		protected override int Right { get; set; }
+		protected override int Rounds { get; set; }
+		
+		public TestFeistelNet(int left, int right, int rounds)
+		{
+			Left = left;
+			Right = right;
+			Rounds = rounds;
 		}
 	}
 }
